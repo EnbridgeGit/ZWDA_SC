@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>DOA Threshold Report Functions</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZMM_THRESHOLDTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZMM_THRESHOLD</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>Z_MMTHRESHOLD_READ</FUNCNAME>
+     <SHORT_TEXT>Function to supply threshold report with data</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_AEDAT</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>AEDAT</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_USNAME</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>XUBNAME</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>E_ZMMT_THRESH_DATA</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>ZTTY_ZMMT_THRESH_REP</TYP>
+      </RSEXP>
+     </EXPORT>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>NO_DATA</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_AEDAT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Changed On</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_USNAME</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>User Name in User Master Record</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>E_ZMMT_THRESH_DATA</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Table Type for ZMMT_THRESH_REP</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>NO_DATA</PARAMETER>
+       <KIND>X</KIND>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>Z_MMTHRESHOLD_UPDATE</FUNCNAME>
+     <UPDATE_TASK>1</UPDATE_TASK>
+     <SHORT_TEXT>Function to update threshold report with approval data</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>I_ZMMT_THRESH_REP</PARAMETER>
+       <TYP>ZTTY_ZMMT_THRESH_REP</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>I_WORKITEM</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SWR_STRUCT-WORKITEMID</TYP>
+      </RSIMP>
+     </IMPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>I_ZMMT_THRESH_REP</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Table Type for ZMMT_THRESH_REP</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_WORKITEM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Work item ID</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>
